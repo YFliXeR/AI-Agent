@@ -6,10 +6,22 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
+@tool
+def calculator(a: float, b: float) -> str:
+    """Useful for performing basic arithmetic calculations"""
+    print("Initializing The calculator Tool...")
+    return f"The sum of {a} and {b} is {a + b}"
+
+@tool
+def sayhello(name: str) -> str:
+    """Useful for greeting a user"""
+    print("Initializing The sayhello Tool...")
+    return f"Hello {name}, nice meeting you"
+
 def main():
     model = init_chat_model(model="gemini-2.0-flash", model_provider="google_genai") #Choosing the model
 
-    tools = []
+    tools = [calculator, sayhello]
     agent_executor = create_react_agent(model, tools) #Initializing the prebuilt agent and giving it the model and tools we want
 
     print("Welcome! I'm your AI assistant. Type 'quit' to exit.")
