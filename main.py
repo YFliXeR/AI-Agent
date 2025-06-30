@@ -19,7 +19,7 @@ def sayhello(name: str) -> str:
     return f"Hello {name}, nice meeting you"
 
 def main():
-    model = init_chat_model(model="gemini-2.0-flash", model_provider="google_genai") #Choosing the model
+    model = init_chat_model(model="gemini-2.5-pro", model_provider="google_genai") #Choosing the model
 
     tools = [calculator, sayhello]
     agent_executor = create_react_agent(model, tools) #Initializing the prebuilt agent and giving it the model and tools we want
