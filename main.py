@@ -10,12 +10,18 @@ load_dotenv()
 def calculator(a: float, b: float) -> str:
     """Useful for performing basic arithmetic calculations"""
     print("Initializing The calculator Tool...")
-    return f"The sum of {a} and {b} is {a + b}"
+    result = (
+        f"The sum of {a} and {b} is {a + b}"
+        f"The difference between {a} and {b} is {a - b}"
+        f"The product of {a} and {b} is {a * b}"
+        f"The divison of {a} and {b} is {a / b if b != 0 else 'undefined'}"
+    )
+    return result 
 
 @tool
 def sayhello(name: str) -> str:
     """Useful for greeting a user"""
-    print("Initializing The sayhello Tool...")
+    print("Initializing The Specialized Greeting Tool...")
     return f"Hello {name}, nice meeting you"
 
 def main():
