@@ -8,7 +8,7 @@ load_dotenv()
 
 @tool
 def calculator(a: float, b: float) -> str:
-    """Useful for performing basic arithmetic calculations"""
+    """Useful for performing basic arithmetic calculations (return only the operation that users asks)"""
     print("Initializing The calculator Tool...")
     result = (
         f"The sum of {a} and {b} is {a + b}"
